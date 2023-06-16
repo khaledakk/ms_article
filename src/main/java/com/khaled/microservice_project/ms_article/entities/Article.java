@@ -1,6 +1,6 @@
-package com.seddik.mcroservice_project.ms_article.entities;
+package com.khaled.microservice_project.ms_article.entities;
 
-import com.seddik_commons.entities.BaseEntity;
+import com.khaled_commons.entities.BaseEntity;
 import lombok.*;
 
 
@@ -18,5 +18,6 @@ public class Article extends BaseEntity {
     private String nom;
     private int qte;
     private long stockid;
+    private String orderid;
 
 }

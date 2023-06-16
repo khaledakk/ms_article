@@ -1,13 +1,12 @@
-package com.seddik.mcroservice_project.ms_article.service;
+package com.khaled.microservice_project.ms_article.service;
 
-import com.seddik.mcroservice_project.ms_article.entities.Article;
-import com.seddik.mcroservice_project.ms_article.feignClient.StockFeignClient;
-import com.seddik.mcroservice_project.ms_article.mapper.ArticleMapper;
-import com.seddik.mcroservice_project.ms_article.repository.ArticleRepository;
-import com.seddik_commons.dto.ArticleDto;
-import com.seddik_commons.dto.StockDto;
+import com.khaled.microservice_project.ms_article.entities.Article;
+import com.khaled.microservice_project.ms_article.mapper.ArticleMapper;
+import com.khaled.microservice_project.ms_article.repository.ArticleRepository;
+import com.khaled_commons.dto.ArticleDto;
+import com.khaled_commons.dto.OrderDto;
+import com.khaled_commons.dto.StockDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.util.ReflectionUtils;
@@ -21,6 +20,7 @@ import java.util.Optional;
 public class ArticleServiceImp implements IArticleService{
     private final ArticleRepository articleRepository;
     private final IStockDto stockDto;
+    private final IOrderDto orderDto;
     private final ArticleMapper articleMapper;
     @Override
     public Article createArticle(Article article) {
@@ -50,7 +50,8 @@ public class ArticleServiceImp implements IArticleService{
         Assert.isTrue(article.isPresent(),"Article not found");
         //ArticleDto articleDto = stockFeignClient.setArticleDto(article.get());
         StockDto stockDto1 = stockDto.retriveStockById(article.get().getStockid());
-        ArticleDto articleDto = articleMapper.ArtitcletoDto(article.get(),stockDto1);
+        OrderDto orderDto1 = orderDto.retriveOrderById(article.get().getOrderid());
+        ArticleDto articleDto = articleMapper.ArtitcletoDto(article.get(),stockDto1,orderDto1);
 
         return articleDto;
     }

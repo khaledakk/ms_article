@@ -1,6 +1,6 @@
-package com.seddik.mcroservice_project.ms_article.service;
+package com.khaled.microservice_project.ms_article.service;
 
-import com.seddik_commons.dto.StockDto;
+import com.khaled_commons.dto.StockDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

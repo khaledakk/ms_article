@@ -1,14 +1,10 @@
-package com.seddik.mcroservice_project.ms_article.feignClient;
+package com.khaled.microservice_project.ms_article.feignClient;
 
-import com.seddik.mcroservice_project.ms_article.entities.Article;
-import com.seddik_commons.dto.ArticleDto;
-import com.seddik_commons.dto.StockDto;
-import com.seddik_commons.entities.BaseEntity;
+import com.khaled.microservice_project.ms_article.entities.Article;
+import com.khaled_commons.dto.ArticleDto;
+import com.khaled_commons.dto.StockDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
