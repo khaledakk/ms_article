@@ -8,7 +8,7 @@
         <version>2.7.12</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.khaled.mcroservice_project</groupId>
+    <groupId>com.khaled.microservice_project</groupId>
     <artifactId>ms_article</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ms_article</name>
